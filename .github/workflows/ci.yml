@@ -31,12 +31,12 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Restaurar dependências
-        run: dotnet restore backend/PulseDesk.Api.csproj
+        run: dotnet restore backend/OrbitBoard.Api.csproj
 
       - name: Compilar backend
         run: >
           dotnet build
-          backend/PulseDesk.Api.csproj
+          backend/OrbitBoard.Api.csproj
           --configuration Release
           --no-restore
 
