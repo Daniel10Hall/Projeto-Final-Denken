@@ -6,7 +6,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
 
-    container_name: pulsedesk-backend
+    container_name: orbitboard-backend
 
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
 
     networks:
-      - pulsedesk-network
+      - orbitboard-network
 
   frontend:
     build:
@@ -27,7 +27,7 @@ services:
       args:
         VITE_API_URL: http://localhost:5200
 
-    container_name: pulsedesk-frontend
+    container_name: orbitboard-frontend
 
     depends_on:
       - backend
@@ -38,8 +38,8 @@ services:
     restart: unless-stopped
 
     networks:
-      - pulsedesk-network
+      - orbitboard-network
 
 networks:
-  pulsedesk-network:
+  orbitboard-network:
     driver: bridge
